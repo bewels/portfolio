@@ -1,0 +1,171 @@
+@media (max-width: 1200px) {
+    .slider-wrapper{
+        .tabs{
+            display: none;
+        }
+    }
+
+    .header{
+        .burger-menu{
+            display: block;
+            .burger-block{
+                display: block;
+            }
+        }
+        &-content{
+            justify-content: center;
+            .nav-list{
+                display: none;
+            }
+        }
+
+    }
+    .portfolio {
+        &-content{
+            &-screen{
+                .portfolio-item{
+                    display: grid;
+                }
+            }
+        }
+        .tabs-footer{
+            display: none;
+        }
+    }
+
+}
+
+
+/* Large desktops and laptops */
+
+
+/* Portrait tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+    .form-section .form-section-header .title, .title, .portfolio-header .titel {
+        font-size: 4rem;
+    }
+    .portfolio-content-screen .item-header {
+        font-size: 3.5rem;
+    }
+    .container{
+        padding: 0;
+    }
+    .subheader{
+        &-title{
+            font-size: 5rem;
+        }
+        &-subtitle{
+            font-size: 3.5rem;
+        }
+    }
+
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+
+    .header{
+        &-content{
+            justify-content: space-around;
+        }
+    }
+
+    .form-section .form-section-header .title, .title, .portfolio-header .titel {
+        font-size: 3rem;
+    }
+    .portfolio-content-screen .item-header {
+        font-size: 3rem;
+    }
+    .container{
+        padding: 0;
+    }
+    .subheader{
+        &-title{
+            font-size: 4rem;
+        }
+        &-subtitle{
+            font-size: 3rem;
+        }
+    }
+
+    .myskils-slider-carusel{ 
+        .slide{
+        margin: 0 2rem;
+        }
+
+        justify-content: center;
+
+    }   
+
+    .footer {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        grid-auto-flow: column;
+        span {
+            grid-row-start: 3;
+        }
+    }
+}
+
+/* Landscape phones and smaller */
+@media (max-width: 480px) {
+
+    .slider-wrapper{
+        overflow-y: scroll;
+    }
+    .form-section .form-section-header .title, .title, .portfolio-header .titel {
+        font-size: 2.5rem;
+    }
+    .portfolio-content-screen .item-header {
+        font-size: 2.5rem;
+    }
+    .container{
+        padding: 0;
+    }
+    .subheader{
+        &-title{
+            font-size: 3rem;
+        }
+        &-subtitle{
+            font-size: 2.5rem;
+        }
+    }
+
+    .myskils{
+        &-slider{
+            &-carusel {
+                .slide-text {
+                    display: none;
+                }
+                .slide{
+                    &::before{
+                        display: none;
+                    }
+                    &:hover{
+                        .slide-icon{
+                            opacity: 1;
+                        }
+                    }
+                }
+        
+            }
+        }
+        .show-slide-content{
+            display: block;
+        }
+    }
+    .form-section{
+        .titel{
+            word-wrap: break-word;
+        }
+        .form{
+            width: 34rem;
+            height: 40rem;
+        }
+    }
+}

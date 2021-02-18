@@ -1,0 +1,136 @@
+.myskils{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    background: $third-color;
+    
+    &-slider{
+        width: 100%;
+        overflow: hidden;
+        &-carusel{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            transition: transform .4s linear;
+            .slide{
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                
+
+                margin: 0 1rem;
+                background: linear-gradient(45deg, rgb(17, 17, 17), rgba(68, 68, 68, 0.747));
+
+                height: 20rem;
+                border-radius: 1rem;
+
+                &::before{
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 0;
+                    background-color: rgba(20, 1, 36, 0.527);
+
+                    transition: height .2s linear;
+                }
+                &:hover::before{
+                    height: 100%;
+                }
+
+                &:hover{
+                    .slide-icon{
+                        opacity: 0;
+                    }
+                    .slide-text{
+                        opacity: 1;
+                        z-index: 9;
+                    }
+                }
+
+                &-text{
+                    position: absolute;
+                    padding: 0 10rem;
+                    opacity: 0;
+                    transition: opacity .2s linear;
+                }
+
+                &-icon{
+                    position: absolute;
+                    user-select: none;
+                    width: 5rem;
+                    height: 5rem;
+                    transition: opacity .1s linear;
+                    filter: grayscale(1);
+                }
+            }
+
+
+            .slide:nth-child(2n){
+                background: linear-gradient(45deg,rgba(68, 68, 68, 0.747), rgb(17, 17, 17));
+            }
+        }
+
+        
+
+        &-content{
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            font-size: 5rem;
+            text-transform: uppercase;
+            margin-bottom: 8rem;
+
+            .prev, .next{
+                cursor: pointer;
+                user-select: none;
+            }
+        }
+    }
+
+    .show-slide-content{
+        display: none;
+        color: inherit;
+        font-size: inherit;
+        background: rgba(60, 3, 107, 0.877);
+        border: none;
+        padding: 1rem 4rem;
+        border-radius: 2rem;
+        opacity: .5;
+        text-transform: uppercase;
+        margin-top: 10rem;
+
+        transition: opacity .2s linear;
+
+        &:hover{
+            opacity: 1;
+        }
+    }
+
+    .slider-modal{
+        display: none;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        width: 100%;
+        height: auto;
+        background: rgb(19, 19, 19);
+        padding: 2rem;
+        border-top: .3rem solid rgba(60, 3, 107, 0.877);
+        border-bottom: .3rem solid rgba(60, 3, 107, 0.877);
+        .cross {
+            cursor: pointer;
+            margin-bottom: 2rem;
+        }
+    }
+}

@@ -1,0 +1,114 @@
+.form-section{
+    display: grid;
+    grid-template-rows: 30% 70%;
+    width: 100%;
+    background: $third-color;
+    align-items: center;
+    justify-items: center;
+
+    .form-section-header{
+        align-self: end;
+        .title{
+            font-size: 5rem;
+            text-transform: uppercase;
+        }
+    }
+
+
+    .form{
+        position: relative;
+        box-shadow: 0 0 5rem rgba($color: #000000, $alpha: .5);
+        width: 40rem;
+        height: 45rem;
+        z-index: 9;
+        form{
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9;
+            width: 100%;
+            height: 100%;
+            border-radius: 2rem;
+            background:#111111;
+            padding: 5rem;
+        }
+        &-item{
+            position: relative;
+            width: 30rem;
+            height: 5rem;
+            margin: .5rem 0;
+            border: .2rem solid transparent;
+            background: transparent;
+            
+            color: #fff;
+            padding: 0 2rem;
+            transition: border-bottom .2s linear;
+
+            &:focus{
+                outline: none;
+                border-bottom: .1rem solid #bdbdbd; 
+            }
+
+            &:invalid{
+                outline: none;
+                box-shadow: none;
+            }
+
+        }
+
+        &-item-btn {
+            position: relative;
+            color: inherit;
+            font-size: inherit;
+            background: transparent;
+            border: .1rem solid rgb(60, 3, 107);
+            padding: 1rem 4rem;
+            border-radius: 2rem;
+            margin-top: 2rem;
+            text-transform: uppercase;
+
+            
+
+            &::before, &::after{
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                border-radius: 2rem;
+                z-index: -1;
+                width: 100%;
+                height: 100%;
+                background: rgb(60, 3, 107);
+                transform: rotate(45deg);
+                transition: transform .1s linear;
+            }
+            &::after{
+                transform: rotate(-45deg);
+            }
+            &:hover::before, &:hover::after{
+                transform: rotate(0);
+            }
+        }
+
+        &::before{
+            content: '';
+            position: absolute;
+            z-index: -1;
+            top: -1%;
+            left: -1%;
+            width: 102%;
+            height: 0%;
+            border-radius: 2rem;
+            background: #111;
+            transition: all .2s linear;
+        }
+
+        &:hover::before{
+            height: 102%;
+            background: rgb(110, 36, 160);
+        }
+
+    }
+}

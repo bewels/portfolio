@@ -1,0 +1,202 @@
+@import 'mixin/mixins';
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+
+    display: flex;
+
+    width: 100%;
+    min-height: 6rem;
+    height: 1px;
+    background: $main-color;
+
+
+    border-bottom-left-radius: 3rem;
+    border-bottom-right-radius: 3rem;
+
+    box-shadow: 0 0 5rem rgba(#000000, .9);
+
+    &-content{
+        display: flex;
+        justify-content: space-between;
+        align-items:center;
+
+        width: 100%;
+        height: 100%;
+
+        .logo{
+            position: relative;
+            text-transform: uppercase;
+            font-size: 2rem;
+            user-select: none;
+            cursor: pointer;
+
+            &::before{
+                @include logo-underline;
+                top: 3px;
+                left: 0;
+            }
+            &::after{
+                @include logo-underline;
+                right: 0;
+                bottom: 0;
+            }
+            &:hover::before, &:hover::after{
+                width: 100%;
+            }
+        }
+
+        .nav {
+            height: 100%;
+            &-list{
+                list-style: none;
+                display: flex;
+                
+                height: 100%;
+                &-item {
+                    display: flex;
+                    align-items: center;
+
+                    padding: 0 2rem;
+
+                    transition: background .2s linear;
+
+                    .item-link{
+                        text-decoration: none;
+                        color: $secondary-color;
+                        text-transform: uppercase;
+                    }
+
+                    &:hover {
+                        background: #35184e;
+                    }
+                }
+            }
+        }
+    }
+
+    .burger-menu{
+        display: none;
+        position: fixed;
+        transform: translateX(100%);
+        right: 0;
+        bottom: 0;
+        background: $main-color;
+        width: 20rem;
+        height: 100%;
+        z-index: 99;
+        box-shadow: 0 0 5rem rgba(#000000, .7);
+        padding: 2rem;
+        transition: transform .2s linear;
+
+        .burger-block{
+            display: none;
+            position: absolute;
+            top: 3%;
+            left: -25%;
+            height: auto;
+            width: 15%;
+            .burger{
+                position: relative;
+                height: .3rem;
+                width: 100%;
+                background: #fff;
+    
+    
+                &::before, &::after{
+                    content: '';
+                    position: absolute;
+                    height: .3rem;
+                    width: 100%;
+                    background: #fff;
+                    transition: transform .2s linear;
+                }
+                &::before{
+                    top: -.5rem;
+                    left: 0;
+                }
+                &::after{
+                    bottom: -.5rem;
+                    right: 0;
+                }
+    
+            }
+        }
+
+
+        .nav {
+            position: relative;
+            &-list{
+                list-style: none;
+                &-item {
+                    display: flex;
+                    align-items: center;
+
+                    padding: 2rem;
+
+                    transition: background .2s linear;
+
+                    .item-link{
+                        text-decoration: none;
+                        color: $secondary-color;
+                        text-transform: uppercase;
+                    }
+
+                    &:hover {
+                        background: #35184e;
+                    }
+                }
+            }
+
+            &::before{
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: .1rem;
+                background-color: #fff;
+                bottom: -2rem;
+                right: 0;
+            }
+        }
+        .slide-tabs{
+            color: $secondary-color;
+            text-transform: uppercase;
+            font-size: 14px;
+            cursor: pointer;
+            user-select: none;
+            padding: 0 .5rem;
+            margin-top: 5rem;
+
+            .active{
+                font-weight: 600;
+            }
+        }
+
+    }
+    .active-burger{
+        transform: translateX(0);
+
+        .burger-block{
+            .burger{
+                background: transparent;
+    
+                &::before, &::after{
+                    transition: .2s;
+                }
+    
+                &::before{
+                    transform: rotate(45deg);
+                    top: 0;
+                }
+                &::after{
+                    transform: rotate(-45deg);
+                    bottom: 0;
+                }
+            }
+        }
+    }
+}
+

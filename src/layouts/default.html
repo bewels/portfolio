@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    {{> head }}
+</head>
+<body>
+
+    {{> header}}
+
+    <main class="main">
+            <div class="slider-wrapper">
+                <div class="tabs">
+                    <ul class="slide-tabs">
+                        <li class="slide-tabs-item active">Главная</li>
+                        <li class="slide-tabs-item">Мои скилы</li>
+                        <li class="slide-tabs-item">Мое портфолио</li>
+                        <li class="slide-tabs-item">Связаться со мной</li>
+                        <li class="slide-tabs-item">Контакты</li>
+                    </ul>
+                </div> <!-- tabs-->
+                <div class="slider-carusel">
+                    {{> body }}
+                    {{> footer}}
+                </div> <!-- slider-carusel-->
+            </div> <!-- slider-wrap-->
+    </main>
+    
+
+<div class="preloader">
+    <div class="preloader-text">
+        <span>Подождите</span>
+        <span>идет загрузка</span>
+    </div>
+</div>
+
+
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

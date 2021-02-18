@@ -1,0 +1,36 @@
+.subheader{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+
+    position: relative;
+
+    width: 100%;
+    background: url(../images/bg_img.jpg) center center/cover no-repeat;
+    color: $secondary-color;
+
+    &::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(20, 1, 36, 0.877);
+    }
+
+    &-title{
+        font-size: 7rem;
+        text-transform: uppercase;
+        z-index: 1;
+
+    }
+
+    &-subtitle{
+        font-size: 4rem;
+        z-index: 1;
+    }
+
+}

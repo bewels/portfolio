@@ -1,0 +1,43 @@
+.footer {
+    width: 100%;
+    background: $third-color-two;
+    display: grid;
+    grid-template: 90% / repeat(2, 50%);
+    align-items: center;
+    text-align: center;
+    
+
+    span{
+        grid-column: 1 / -1;
+        color: rgba(177, 177, 177, 0.836);
+        font-size: 1.8rem;
+    }
+
+    &-contact{
+        display: flex;
+        flex-direction: column;
+        h5 {
+            font-size: 2rem;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        a {
+            color: rgb(129, 129, 129);
+        }
+    }
+
+    &-link {
+        user-select: none;
+        img{
+            width: 4rem;
+            height: 4rem;
+            margin: 0 .5rem;
+            filter: grayscale(1);
+            transition: filter .2s linear;
+            &:hover{
+                filter: none;
+            }
+        }
+
+    }
+}
